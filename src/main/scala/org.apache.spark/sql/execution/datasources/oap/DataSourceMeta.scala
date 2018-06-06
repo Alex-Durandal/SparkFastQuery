@@ -26,7 +26,7 @@ import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs._
 
 import org.apache.spark.sql.catalyst.expressions._
-import org.apache.spark.sql.execution.datasources.oap.io.OapDataFile
+import org.apache.spark.sql.execution.datasources.oap.io.ParquetDataFile
 import org.apache.spark.sql.types._
 
 /**
@@ -400,7 +400,7 @@ private[oap] class DataSourceMetaBuilder {
   val fileMetas = ArrayBuffer.empty[FileMeta]
   val indexMetas = ArrayBuffer.empty[IndexMeta]
   var schema: StructType = new StructType()
-  var dataReaderClassName: String = classOf[OapDataFile].getCanonicalName
+  var dataReaderClassName: String = classOf[ParquetDataFile].getCanonicalName
 
   def addFileMeta(fileMeta: FileMeta): this.type = {
     fileMetas += fileMeta

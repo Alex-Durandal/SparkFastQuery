@@ -61,9 +61,9 @@ case class CreateIndex(
         case other => other
       }
     val (fileCatalog, schema, readerClassName, identifier, fsRelation) = relation match {
-      case LogicalRelation(
-      _fsRelation @ HadoopFsRelation(f, _, s, _, _: OapFileFormat, _), _, id) =>
-        (f, s, OapFileFormat.OAP_DATA_FILE_CLASSNAME, id, _fsRelation)
+//      case LogicalRelation(
+//      _fsRelation @ HadoopFsRelation(f, _, s, _, _: OapFileFormat, _), _, id) =>
+//        (f, s, OapFileFormat.OAP_DATA_FILE_CLASSNAME, id, _fsRelation)
       case LogicalRelation(
       _fsRelation @ HadoopFsRelation(f, _, s, _, _: ParquetFileFormat, _), _, id) =>
         if (!sparkSession.conf.get(SQLConf.OAP_PARQUET_ENABLED)) {
@@ -291,9 +291,9 @@ case class RefreshIndex(
         case other => other
       }
     val (fileCatalog, schema, readerClassName) = relation match {
-      case LogicalRelation(
-          HadoopFsRelation(f, _, s, _, _: OapFileFormat, _), _, _) =>
-        (f, s, OapFileFormat.OAP_DATA_FILE_CLASSNAME)
+//      case LogicalRelation(
+//          HadoopFsRelation(f, _, s, _, _: OapFileFormat, _), _, _) =>
+//        (f, s, OapFileFormat.OAP_DATA_FILE_CLASSNAME)
       case LogicalRelation(
           HadoopFsRelation(f, _, s, _, _: ParquetFileFormat, _), _, _) =>
         (f, s, OapFileFormat.PARQUET_DATA_FILE_CLASSNAME)

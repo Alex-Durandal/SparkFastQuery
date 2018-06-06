@@ -1,0 +1,30 @@
+products:
+   src/test/scala/TestIndex.scala -> target/test-classes/TestIndex$$anonfun$1.class
+   src/test/scala/TestIndex.scala -> target/test-classes/TestIndex$$anonfun$time$1.class
+   src/test/scala/TestIndex.scala -> target/test-classes/TestIndex$$typecreator2$1.class
+   src/test/scala/TestIndex.scala -> target/test-classes/TestIndex$.class
+   src/test/scala/TestIndex.scala -> target/test-classes/TestIndex.class
+   src/test/scala/TestReadFile.scala -> target/test-classes/TestReadFile$$anonfun$time$1.class
+   src/test/scala/TestReadFile.scala -> target/test-classes/TestReadFile$.class
+   src/test/scala/TestReadFile.scala -> target/test-classes/TestReadFile.class
+binary dependencies:
+   src/test/scala/TestIndex.scala -> /home/alex/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/test/scala/TestIndex.scala -> /home/alex/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/test/scala/TestIndex.scala -> /home/alex/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar
+   src/test/scala/TestIndex.scala -> /home/alex/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+   src/test/scala/TestIndex.scala -> /usr/java/jdk/jre/lib/rt.jar
+   src/test/scala/TestReadFile.scala -> /home/alex/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/test/scala/TestReadFile.scala -> /home/alex/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/test/scala/TestReadFile.scala -> /home/alex/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar
+   src/test/scala/TestReadFile.scala -> /usr/java/jdk/jre/lib/rt.jar
+source dependencies:
+external dependencies:
+class names:
+   src/test/scala/TestIndex.scala -> TestIndex
+   src/test/scala/TestIndex.scala -> TestIndex$
+   src/test/scala/TestIndex.scala -> TestIndex$$anonfun$1
+   src/test/scala/TestIndex.scala -> TestIndex$$anonfun$time$1
+   src/test/scala/TestIndex.scala -> TestIndex$$typecreator2$1
+   src/test/scala/TestReadFile.scala -> TestReadFile
+   src/test/scala/TestReadFile.scala -> TestReadFile$
+   src/test/scala/TestReadFile.scala -> TestReadFile$$anonfun$time$1

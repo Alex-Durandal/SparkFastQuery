@@ -28,7 +28,6 @@ import org.apache.hadoop.conf.Configuration
 import org.apache.spark.SparkEnv
 import org.apache.spark.internal.Logging
 import org.apache.spark.sql.execution.datasources.oap.io._
-import org.apache.spark.sql.execution.datasources.oap.utils.CacheStatusSerDe
 import org.apache.spark.util.collection.BitSet
 
 
@@ -98,25 +97,6 @@ object FiberCacheManager extends Logging {
     cache.get(fiber, cacheLoader(fiber, conf))
   }
 
-  // TODO: test case, consider data eviction, try not use DataFileHandle which my be costly
-  private[filecache] def status: String = {
-    val dataFibers = cache.asMap().keySet().asScala.collect {
-      case fiber: DataFiber => fiber
-    }
-
-    val statusRawData = dataFibers.groupBy(_.file).map {
-      case (dataFile, fiberSet) =>
-        val fileMeta = DataFileHandleCacheManager(dataFile).asInstanceOf[OapDataFileHandle]
-        val fiberBitSet = new BitSet(fileMeta.groupCount * fileMeta.fieldCount)
-        fiberSet.foreach(fiber =>
-          fiberBitSet.set(fiber.columnIndex + fileMeta.fieldCount * fiber.rowGroupId))
-        FiberCacheStatus(dataFile.path, fiberBitSet, fileMeta)
-    }.toSeq
-
-    CacheStatusSerDe.serialize(statusRawData)
-  }
-
-  def cacheStats: CacheStats = cache.stats()
 
   def cacheSize : Long = _cacheSize.get()
 }

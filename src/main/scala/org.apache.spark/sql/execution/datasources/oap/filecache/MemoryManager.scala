@@ -25,7 +25,6 @@ import org.apache.spark.SparkEnv
 import org.apache.spark.internal.Logging
 import org.apache.spark.memory.MemoryMode
 import org.apache.spark.sql.execution.datasources.OapException
-import org.apache.spark.sql.execution.datasources.oap.ColumnValues
 import org.apache.spark.storage.{BlockManager, TestBlockId}
 import org.apache.spark.unsafe.Platform
 import org.apache.spark.unsafe.memory.{MemoryAllocator, MemoryBlock}
@@ -83,7 +82,6 @@ trait FiberCache {
     bytes
   }
 
-  /** TODO: may cause copy memory from off-heap to on-heap, used by [[ColumnValues]] */
   private def copyMemory(offset: Long, dst: AnyRef, dstOffset: Long, length: Long): Unit =
     Platform.copyMemory(getBaseObj, getBaseOffset + offset, dst, dstOffset, length)
 

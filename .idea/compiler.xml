@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SparkFastQuery" />
+        <module name="wp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="oap" target="1.7" />
       <module name="SparkFastQuery" target="1.7" />
+      <module name="wp" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
